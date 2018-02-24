@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PixelPerfecrCamera : MonoBehaviour {
+public class PixelPerfectCamera : MonoBehaviour {
 
 	Vector2 position;
 
@@ -10,9 +10,9 @@ public class PixelPerfecrCamera : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		GetComponent<Camera>.orthographicSize = Screen.height / 2;
+		GetComponent<Camera>().orthographicSize = Screen.height / 2;
 		position = transform.position;
-		transform.position = new Vector2 (position.x - .1f, position.y - .1f, -10);
+		transform.position = new Vector3 (position.x - .1f, position.y - .1f, -10);
 	}
 	
 	// Update is called once per frame
