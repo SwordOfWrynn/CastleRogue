@@ -112,82 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1119961882
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1119961885}
-  - component: {fileID: 1119961884}
-  - component: {fileID: 1119961883}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1119961883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1119961882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7808aa4bf6afc7438694e07c61a060f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boardScript: {fileID: 0}
---- !u!114 &1119961884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1119961882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d14128fcdc7b87740a04129321c74af5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  columns: 8
-  rows: 8
-  wallCount:
-    maximum: 9
-    minimum: 5
-  foodCount:
-    maximum: 5
-    minimum: 1
-  exit: {fileID: 1937711901282722, guid: 1161fc26341c85d42ae9e96d4de27292, type: 2}
-  floorTiles:
-  - {fileID: 0}
-  wallTiles:
-  - {fileID: 1101458312435808, guid: 526a82fd225806548b260f660a11d4f0, type: 2}
-  - {fileID: 1854134572805970, guid: 8f060d6ac1275c64699a746ad236a00e, type: 2}
-  foodTiles:
-  - {fileID: 1186850762722824, guid: b31a0616699dd88499d38a3b87c56ff3, type: 2}
-  - {fileID: 1812325995612074, guid: c0625518b4881a74595a244e7fdd3707, type: 2}
-  - {fileID: 1353710663965466, guid: 886c10e31d29ef746aed9ce8d39b10bd, type: 2}
-  enemyTiles:
-  - {fileID: 1935024789310076, guid: 4703f98b131b8704f8fa62b88d1c8a76, type: 2}
-  - {fileID: 1720896392759024, guid: ad12acc84f4ce7940a063c417d4e6336, type: 2}
-  outerWallTiles:
-  - {fileID: 1943557484278494, guid: 9d2aaa0430f2cb641b66ba715d01a89e, type: 2}
---- !u!4 &1119961885
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1119961882}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.17895979, y: 1.5859454, z: -0.06961532}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1719925656
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,6 +123,8 @@ GameObject:
   - component: {fileID: 1719925659}
   - component: {fileID: 1719925658}
   - component: {fileID: 1719925657}
+  - component: {fileID: 1719925661}
+  - component: {fileID: 1719925662}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -268,3 +194,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1719925661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719925656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdad02d48c00a8d438ea0503b548cc55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1719925662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719925656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0ff98bfea31f574ba5f7b8ed3f598b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
