@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4126293785991982}
   - component: {fileID: 212874916387367634}
   - component: {fileID: 61841719428480768}
+  - component: {fileID: 114840785888652800}
   m_Layer: 8
   m_Name: InnerWall1
   m_TagString: Untagged
@@ -66,6 +67,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 32, y: 32}
   m_EdgeRadius: 0
+--- !u!114 &114840785888652800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1101458312435808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a621d0480cb074b890d8a4b79e3bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmgSprite: {fileID: 21300004, guid: 57b0b92324a092f4eb31007064478000, type: 3}
+  hp: 4
 --- !u!212 &212874916387367634
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -100,7 +114,7 @@ SpriteRenderer:
   m_SortingLayerID: -118005247
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6ec1a8e5cfe947a4fab66b041fdbe2b3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 57b0b92324a092f4eb31007064478000, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

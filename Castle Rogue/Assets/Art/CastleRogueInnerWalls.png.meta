@@ -1,11 +1,13 @@
 fileFormatVersion: 2
-guid: 6ec1a8e5cfe947a4fab66b041fdbe2b3
-timeCreated: 1519790005
+guid: 57b0b92324a092f4eb31007064478000
+timeCreated: 1519881369
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: CastleRogueInnerWalls_0
     21300002: CastleRogueInnerWalls_1
+    21300004: CastleRogueInnerWalls_2
+    21300006: CastleRogueInnerWalls_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -115,7 +117,35 @@ TextureImporter:
       name: CastleRogueInnerWalls_1
       rect:
         serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CastleRogueInnerWalls_2
+      rect:
+        serializedVersion: 2
         x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CastleRogueInnerWalls_3
+      rect:
+        serializedVersion: 2
+        x: 64
         y: 0
         width: 64
         height: 64
