@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement:
-
-//9:38 in video
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MovingObject {
 
@@ -40,7 +39,7 @@ public class Player : MovingObject {
             vertical = 0;
 
         if (horizontal != 0 || vertical != 0)
-            AttemptMove<Wall>(horizontal, vertical);
+            AttemptMove<InnerWalls>(horizontal, vertical);
 	}
 
  protected override void AttemptMove<T>(int xDir, int yDir)
@@ -52,9 +51,28 @@ public class Player : MovingObject {
         GameManager.instance.playersTurn = false;
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Exit")
+        {
+            Invoke("Restart", restartDelay);
+            enabled = false;
+        }
+        else if (other.tag == "Food")
+        {
+            food += pointsPerFood;
+            other.gameObject.SetActive(false);
+        }
+        else if (other.tag == "Soda")
+        {
+            food += pointsPerSoda;
+            other.gameObject.SetActive(false);
+        }
+    }
+
     protected override void OnCantMove<T>(T component)
     {
-        WallDamage hitWall = component as Wall;
+        InnerWalls hitWall = component as InnerWalls;
         hitWall.DamageWall(WallDamage);
         animator.SetTrigger("rogueAttack");
     }
@@ -62,6 +80,13 @@ public class Player : MovingObject {
     private void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void LoseFood (int loss)
+    {
+        animator.SetTrigger("rogueHit");
+        food -= loss;
+        CheckIfGameOver();
     }
 
     private void CheckIfGameOver()
