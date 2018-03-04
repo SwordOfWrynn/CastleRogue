@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour {
 
         DontDestroyOnLoad(gameObject);
 
-        enemies = new List<Enemy>;
+        enemies = new List<Enemy>();
 
         boardScript = GetComponent<BoardManager>();
         InitGame();
@@ -38,6 +38,18 @@ public class GameManager : MonoBehaviour {
     {
         enabled = false;
     }
+    private void Update()
+    {
+        if (playersTurn || enemiesMoving)
+            return;
+        StartCoroutine(MoveEnemies());
+    }
+    public void AddEnemyToList(Enemy script)
+    {
+        enemies.Add(script);
+    }
+
+
     IEnumerator MoveEnemies()
     {
         enemiesMoving = true;
