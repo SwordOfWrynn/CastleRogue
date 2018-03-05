@@ -11,23 +11,23 @@ public abstract class MovingObject : MonoBehaviour {
     private Rigidbody2D rb2d;
     private float inverseMoveTime;
 
-	// Use this for initialization
-	protected virtual void Start () {
+    // Use this for initialization
+    protected virtual void Start() {
         boxCollider = GetComponent<BoxCollider2D>();
         rb2d = GetComponent<Rigidbody2D>();
         inverseMoveTime = 1f / moveTime;
-	}
-	
-    protected bool Move (int xDir, int yDir, out RaycastHit2D hit)
+    }
+
+    protected bool Move(int xDir, int yDir, out RaycastHit2D hit)
     {
         Vector2 start = transform.position;
-        Vector2 end = start + new Vector2(xDir, yDir);
+        Vector2 end = start + new Vector2(xDir * 64, yDir * 64);
 
         boxCollider.enabled = false;
         hit = Physics2D.Linecast(start, end, blockingLayer);
         boxCollider.enabled = true;
 
-        if(hit.transform == null)
+        if (hit.transform == null)
         {
             StartCoroutine(SmoothMovement(end));
             return true;
@@ -41,18 +41,18 @@ public abstract class MovingObject : MonoBehaviour {
 
         while (sqrRemainingDistance > float.Epsilon)
         {
-            Vector3 newPosition = Vector3.MoveTowards(rb2d.position, end, inverseMoveTime * Time.deltaTime);
+            Vector3 newPosition = Vector3.MoveTowards(rb2d.position, end, inverseMoveTime/* * Time.deltaTime*/);
             rb2d.MovePosition(newPosition);
             sqrRemainingDistance = (transform.position - end).sqrMagnitude;
             yield return null;
         }
     }
 
-    protected virtual void AttemptMove <T> (int xDir, int yDir)
+    protected virtual void AttemptMove<T>(int xDir, int yDir)
         where T : Component
     {
         RaycastHit2D hit;
-        bool canMove = Move(xDir, xDir, out hit);
+        bool canMove = Move(xDir, yDir, out hit);
 
         if (hit.transform == null)
             return;
@@ -64,13 +64,4 @@ public abstract class MovingObject : MonoBehaviour {
 
     protected abstract void OnCantMove<T>(T component)
         where T : Component;
-
-
-
-
-
-
-
-
-
 }

@@ -27,19 +27,23 @@ public class Player : MovingObject {
     }
 
     // Update is called once per frame
-    void Update () {
+    private void Update () {
         if (!GameManager.instance.playersTurn) return;
 
         int horizontal = 0;
         int vertical = 0;
-        horizontal = (int)Input.GetAxisRaw("Horizontal");
-        vertical = (int)Input.GetAxisRaw("Vertical");
-
+        horizontal = (int)(Input.GetAxisRaw("Horizontal"));
+        vertical = (int)(Input.GetAxisRaw("Vertical"));
         if (horizontal != 0)
+        {
             vertical = 0;
+        }
+    
 
         if (horizontal != 0 || vertical != 0)
+        {
             AttemptMove<InnerWalls>(horizontal, vertical);
+        }
 	}
 
  protected override void AttemptMove<T>(int xDir, int yDir)
@@ -49,6 +53,13 @@ public class Player : MovingObject {
         RaycastHit2D hit;
         CheckIfGameOver();
         GameManager.instance.playersTurn = false;
+    }
+
+    protected override void OnCantMove<T>(T component)
+    {
+        InnerWalls hitWall = component as InnerWalls;
+        hitWall.DamageWall(WallDamage);
+        animator.SetTrigger("rogueAttack");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -68,13 +79,6 @@ public class Player : MovingObject {
             food += pointsPerSoda;
             other.gameObject.SetActive(false);
         }
-    }
-
-    protected override void OnCantMove<T>(T component)
-    {
-        InnerWalls hitWall = component as InnerWalls;
-        hitWall.DamageWall(WallDamage);
-        animator.SetTrigger("rogueAttack");
     }
     
     private void Restart()
