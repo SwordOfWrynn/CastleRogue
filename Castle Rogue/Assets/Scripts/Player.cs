@@ -10,6 +10,7 @@ public class Player : MovingObject {
     public int pointsPerFood = 10;
     public int pointsPerSoda = 20;
     public float restartDelay = 1f;
+    public Text foodText;
 
     private Animator animator;
     private int food;
@@ -18,6 +19,7 @@ public class Player : MovingObject {
 	protected override void Start () {
         animator = GetComponent<Animator>();
         food = GameManager.instance.playerFoodPoints;
+        foodText.text = ("Score" + food);
         base.Start();
 	}
 
@@ -49,6 +51,7 @@ public class Player : MovingObject {
  protected override void AttemptMove<T>(int xDir, int yDir)
     {
         food--;
+        foodText.text = ("Score" + food);
         base.AttemptMove<T>(xDir, yDir);
         RaycastHit2D hit;
         CheckIfGameOver();
