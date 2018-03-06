@@ -43,7 +43,7 @@ public class Enemy : MovingObject {
     {
         Player hitPlayer = component as Player;
         animator.SetTrigger("enemyAttack");
-        hitPlayer.LoseFood(playerDamage);
+        hitPlayer.LoseStamina(playerDamage);
     }
     
 }

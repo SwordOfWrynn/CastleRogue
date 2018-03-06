@@ -7,10 +7,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     public float levelStartDelay = 2f;
-    public float turnDelay = .1f;
+    public float turnDelay = .2f;
     public static GameManager instance = null;
     public BoardManager boardScript;
-    public int playerFoodPoints = 100;
+    public int playerStaminaPoints = 100;
+    [HideInInspector] public int playerScorePoints = 0;
     [HideInInspector] public bool playersTurn = true;
 
     private Text levelText;
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour {
         enemies = new List<Enemy>();
 
         boardScript = GetComponent<BoardManager>();
-        InitGame();
+        //InitGame();
 	}
 
     //This is called each time a scene is loaded.
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour {
     {
         //Add one to our level number.
         level++;
+        Debug.Log(level);
         //Call InitGame to initialize our level.
         InitGame();
     }
@@ -74,7 +76,7 @@ void InitGame () {
 
     public void GameOver()
     {
-        levelText.text = ("You robbed" + level + "rooms before you had to make your escape");
+        levelText.text = ("You robbed " + level + " rooms before \n you had to make your escape");
         levelImage.SetActive(true);
         enabled = false;
     }

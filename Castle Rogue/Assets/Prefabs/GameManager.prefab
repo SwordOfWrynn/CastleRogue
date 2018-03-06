@@ -61,6 +61,7 @@ MonoBehaviour:
     maximum: 5
     minimum: 1
   exit: {fileID: 1937711901282722, guid: 1161fc26341c85d42ae9e96d4de27292, type: 2}
+  exitDummy: {fileID: 1150996016195634, guid: 09eba9d9dba65f24983d781bd9492816, type: 2}
   floorTiles:
   - {fileID: 1708696417524856, guid: 2414acacfa56a5a4893af420943b0ace, type: 2}
   wallTiles:
@@ -91,4 +92,4 @@ MonoBehaviour:
   boardScript: {fileID: 0}
   playerFoodPoints: 100
   playersTurn: 1
-  level: 1
+  level: 0

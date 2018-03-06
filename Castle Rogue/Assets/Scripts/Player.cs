@@ -7,25 +7,32 @@ using UnityEngine.UI;
 public class Player : MovingObject {
 
     public int WallDamage = 1;
-    public int pointsPerFood = 10;
-    public int pointsPerSoda = 20;
+    public int pointsPerCoin = 10;
+    public int pointsPerDiamond = 20;
+    public int staminaPerPotion = 25;
     public float restartDelay = 1f;
-    public Text foodText;
+    public Text staminaText;
+    public Text scoreText;
 
     private Animator animator;
-    private int food;
+    private int stamina;
+    private int score;
+    private Vector2 touchOrigin = -Vector2.one;
 
 	// Use this for initialization
 	protected override void Start () {
         animator = GetComponent<Animator>();
-        food = GameManager.instance.playerFoodPoints;
-        foodText.text = ("Score" + food);
+        stamina = GameManager.instance.playerStaminaPoints;
+        staminaText.text = ("Stamina: " + stamina);
+        score = GameManager.instance.playerScorePoints;
+        scoreText.text = ("Score: " + score);
         base.Start();
 	}
 
     private void OnDisable()
     {
-        GameManager.instance.playerFoodPoints = food;
+        GameManager.instance.playerStaminaPoints = stamina;
+        GameManager.instance.playerScorePoints = score;
     }
 
     // Update is called once per frame
@@ -34,6 +41,9 @@ public class Player : MovingObject {
 
         int horizontal = 0;
         int vertical = 0;
+
+#if UNITY_STANDALONE || UNITY_WEBPLAYER || UNITY_EDITOR
+
         horizontal = (int)(Input.GetAxisRaw("Horizontal"));
         vertical = (int)(Input.GetAxisRaw("Vertical"));
         if (horizontal != 0)
@@ -41,7 +51,27 @@ public class Player : MovingObject {
             vertical = 0;
         }
     
-
+#else
+        if (Input.touchCount > 0)
+        {
+            Touch myTouch = Input.touches[0];
+            if (myTouch.phase == TouchPhase.Began)
+            {
+                touchOrigin = myTouch.position;
+            }
+            else if (myTouch.phase == TouchPhase.Ended && touchOrigin.x >= 0)
+            {
+                Vector2 touchEnd = myTouch.position;
+                float x = touchEnd.x - touchOrigin.x;
+                float y = touchEnd.y - touchOrigin.y;
+                touchOrigin.x = -1;
+                if (Mathf.Abs(x) > Mathf.Abs(y))
+                    horizontal = x > 0 ? 1 : -1;
+                else
+                    vertical = y > 0 ? 1 : -1;
+            }
+        }
+#endif
         if (horizontal != 0 || vertical != 0)
         {
             AttemptMove<InnerWalls>(horizontal, vertical);
@@ -50,10 +80,12 @@ public class Player : MovingObject {
 
  protected override void AttemptMove<T>(int xDir, int yDir)
     {
-        food--;
-        foodText.text = ("Score" + food);
+        stamina--;
+        staminaText.text = ("Stamina: " + stamina);
+        scoreText.text = ("Score: " + score);
         base.AttemptMove<T>(xDir, yDir);
         RaycastHit2D hit;
+
         CheckIfGameOver();
         GameManager.instance.playersTurn = false;
     }
@@ -72,14 +104,22 @@ public class Player : MovingObject {
             Invoke("Restart", restartDelay);
             enabled = false;
         }
-        else if (other.tag == "Food")
+        else if (other.tag == "Coin")
         {
-            food += pointsPerFood;
+            score += pointsPerCoin;
+            scoreText.text = ("+" + pointsPerCoin + " Score: " + score);
             other.gameObject.SetActive(false);
         }
-        else if (other.tag == "Soda")
+        else if (other.tag == "Diamond")
         {
-            food += pointsPerSoda;
+            score += pointsPerDiamond;
+            scoreText.text = ("+" + pointsPerDiamond + " Score: " + score);
+            other.gameObject.SetActive(false);
+        }
+        else if (other.tag == "Potion")
+        {
+            stamina += staminaPerPotion;
+            staminaText.text = ("+" + staminaPerPotion + " Stamina: " + stamina);
             other.gameObject.SetActive(false);
         }
     }
@@ -89,16 +129,17 @@ public class Player : MovingObject {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void LoseFood (int loss)
+    public void LoseStamina (int loss)
     {
         animator.SetTrigger("rogueHit");
-        food -= loss;
+        stamina -= loss;
+        staminaText.text = ("-" + loss + " Stamina: " + stamina);
         CheckIfGameOver();
     }
 
     private void CheckIfGameOver()
     {
-        if (food <= 0)
+        if (stamina <= 0)
             GameManager.instance.GameOver();
     }
 }
