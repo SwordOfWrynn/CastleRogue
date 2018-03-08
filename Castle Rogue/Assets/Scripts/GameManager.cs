@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour {
     {
         //Add one to our level number.
         level++;
-        Debug.Log(level);
+        Debug.Log("Level " + level);
         //Call InitGame to initialize our level.
         InitGame();
     }
