@@ -14,6 +14,11 @@ public class Player : MovingObject {
     public Text staminaText;
     public Text scoreText;
 
+    public GameObject RightArrow;
+    public GameObject UpArrow;
+    public GameObject LeftArrow;
+    public GameObject DownArrow;
+
     private Animator animator;
     private int stamina;
     private int score;
@@ -52,7 +57,20 @@ public class Player : MovingObject {
         }
     
 #else
-        if (Input.touchCount > 0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*if (Input.touchCount > 0)
         {
             Touch myTouch = Input.touches[0];
             if (myTouch.phase == TouchPhase.Began)
@@ -70,7 +88,7 @@ public class Player : MovingObject {
                 else
                     vertical = y > 0 ? 1 : -1;
             }
-        }
+        }*/
 #endif
         if (horizontal != 0 || vertical != 0)
         {

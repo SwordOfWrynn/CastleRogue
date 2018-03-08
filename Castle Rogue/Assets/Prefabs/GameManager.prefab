@@ -90,6 +90,7 @@ MonoBehaviour:
   levelStartDelay: 2
   turnDelay: 0.1
   boardScript: {fileID: 0}
-  playerFoodPoints: 100
+  playerStaminaPoints: 100
+  playerScorePoints: 0
   playersTurn: 1
   level: 0
