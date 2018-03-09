@@ -29,7 +29,7 @@ public class MainMenu : MonoBehaviour {
     public void Castle()
     {
         //load top scene in the build settings; I think it's an array
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public void StartGame()
     {

@@ -13,11 +13,8 @@ public class Player : MovingObject {
     public float restartDelay = 1f;
     public Text staminaText;
     public Text scoreText;
-
-    public GameObject RightArrow;
-    public GameObject UpArrow;
-    public GameObject LeftArrow;
-    public GameObject DownArrow;
+    public int horizontal;
+    public int vertical;
 
     private Animator animator;
     private int stamina;
@@ -44,8 +41,8 @@ public class Player : MovingObject {
     private void Update () {
         if (!GameManager.instance.playersTurn) return;
 
-        int horizontal = 0;
-        int vertical = 0;
+        //int horizontal = 0;
+        //int vertical = 0;
 
 #if UNITY_STANDALONE || UNITY_WEBPLAYER || UNITY_EDITOR
 
@@ -55,48 +52,35 @@ public class Player : MovingObject {
         {
             vertical = 0;
         }
-    
+        
 #else
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*if (Input.touchCount > 0)
-        {
-            Touch myTouch = Input.touches[0];
-            if (myTouch.phase == TouchPhase.Began)
-            {
-                touchOrigin = myTouch.position;
-            }
-            else if (myTouch.phase == TouchPhase.Ended && touchOrigin.x >= 0)
-            {
-                Vector2 touchEnd = myTouch.position;
-                float x = touchEnd.x - touchOrigin.x;
-                float y = touchEnd.y - touchOrigin.y;
-                touchOrigin.x = -1;
-                if (Mathf.Abs(x) > Mathf.Abs(y))
-                    horizontal = x > 0 ? 1 : -1;
-                else
-                    vertical = y > 0 ? 1 : -1;
-            }
-        }*/
+        //Do nothing
 #endif
         if (horizontal != 0 || vertical != 0)
         {
             AttemptMove<InnerWalls>(horizontal, vertical);
         }
+        horizontal = 0;
+        vertical = 0;
 	}
 
- protected override void AttemptMove<T>(int xDir, int yDir)
+    public void RightButton()
+    {
+        horizontal = 1;
+    }
+    public void UpButton()
+    {
+        vertical = 1;
+    }
+    public void LeftButton()
+    {
+        horizontal = -1;
+    }
+    public void DownButton()
+    {
+        vertical = -1;
+    }
+    protected override void AttemptMove<T>(int xDir, int yDir)
     {
         stamina--;
         staminaText.text = ("Stamina: " + stamina);
