@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
     public int playerStaminaPoints = 100;
     [HideInInspector] public int playerScorePoints = 0;
     [HideInInspector] public bool playersTurn = true;
+    public GameObject levelImageMenuButton;
 
     private Text levelText;
     private GameObject levelImage;
@@ -78,6 +79,7 @@ void InitGame () {
     {
         levelText.text = ("You robbed " + level + " rooms before \n you had to make your escape");
         levelImage.SetActive(true);
+        levelImageMenuButton.SetActive(true);
         enabled = false;
     }
     private void Update()
@@ -109,5 +111,10 @@ void InitGame () {
         enemiesMoving = false;
     }
 
+    public void MenuButton()
+    {
+        Destroy(gameObject);
+        SceneManager.LoadScene("MainMenu");
+    }
 
 }

@@ -11,6 +11,7 @@ public class CastleMenuButton : MonoBehaviour
     public GameObject yes;
     public GameObject no;
     public GameObject greyOut;
+    public GameObject gameManager;
 
     // Use this for initialization
     void Start()
@@ -19,6 +20,8 @@ public class CastleMenuButton : MonoBehaviour
         yes.SetActive(false);
         no.SetActive(false);
         greyOut.SetActive(false);
+        gameManager = GameObject.Find("GameManager(Clone)");
+        Debug.Log(gameManager);
     }
 
     // Update is called once per frame
@@ -37,6 +40,7 @@ public class CastleMenuButton : MonoBehaviour
     public void Yes()
     {
         Time.timeScale = 1;
+        Destroy(gameManager);
         SceneManager.LoadScene("MainMenu");
     }
     public void No()
