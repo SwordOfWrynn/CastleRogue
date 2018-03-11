@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour {
     public int playerStaminaPoints = 100;
     [HideInInspector] public int playerScorePoints = 0;
     [HideInInspector] public bool playersTurn = true;
-    public GameObject levelImageMenuButton;
+    [HideInInspector] public GameObject MainMenuLossButton;
 
     private Text levelText;
     private GameObject levelImage;
@@ -60,6 +60,8 @@ public class GameManager : MonoBehaviour {
 
 void InitGame () {
         doingSetup = true;
+        MainMenuLossButton = GameObject.Find("MainMenuLossButton");
+        MainMenuLossButton.SetActive(false);
         levelImage = GameObject.Find("levelImage");
         levelText = GameObject.Find("levelText").GetComponent<Text>();
         levelText.text = ("Room " + level);
@@ -79,7 +81,7 @@ void InitGame () {
     {
         levelText.text = ("You robbed " + level + " rooms before \n you had to make your escape");
         levelImage.SetActive(true);
-        levelImageMenuButton.SetActive(true);
+        MainMenuLossButton.SetActive(true);
         enabled = false;
     }
     private void Update()
