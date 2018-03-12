@@ -19,7 +19,6 @@ public class Player : MovingObject {
     private Animator animator;
     private int stamina;
     private int score;
-    private Vector2 touchOrigin = -Vector2.one;
 
 	// Use this for initialization
 	protected override void Start () {
@@ -59,6 +58,8 @@ public class Player : MovingObject {
         if (horizontal != 0 || vertical != 0)
         {
             AttemptMove<InnerWalls>(horizontal, vertical);
+            horizontal = 0;
+            vertical = 0;
         }
         horizontal = 0;
         vertical = 0;

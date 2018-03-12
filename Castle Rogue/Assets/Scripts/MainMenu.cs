@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Advertisements;
 
 public class MainMenu : MonoBehaviour {
 
@@ -11,7 +12,8 @@ public class MainMenu : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         MenuDummy.SetActive(false);
-	}
+        Advertisement.Initialize(string "1732470");
+    }
 	
 	// Update is called once per frame
 	void Update () {
