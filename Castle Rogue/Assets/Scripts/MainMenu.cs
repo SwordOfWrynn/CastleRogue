@@ -32,9 +32,15 @@ public class MainMenu : MonoBehaviour {
     }
     public void Castle()
     {
-        //load top scene in the build settings; I think it's an array
+        //load 2nd scene in the build settings; I think it's an array
         SceneManager.LoadScene(1);
     }
+
+    public void CharacterSelection()
+    {
+        SceneManager.LoadScene("CharacterSelection");
+    }
+
     public void StartGame()
     {
         Time.timeScale = 1;
@@ -43,6 +49,6 @@ public class MainMenu : MonoBehaviour {
     }
     public void Credits()
     {
-        SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("Testing");
     }
 }
