@@ -9,10 +9,12 @@ public class MainMenu : MonoBehaviour {
     public GameObject PlayButton;
     public GameObject MenuDummy;
 
-	// Use this for initialization
-	void Start () {
+    private string gameID = "1732470";
+
+    // Use this for initialization
+    void Start () {
         MenuDummy.SetActive(false);
-        Advertisement.Initialize(string "1732470");
+        //Advertisement.Initialize(string gameID);
     }
 	
 	// Update is called once per frame
