@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Advertisements;
+using UnityEditor;
 
 public class GameManager : MonoBehaviour {
 
@@ -120,7 +121,9 @@ void InitGame () {
 
     public void MenuButton()
     {
+        gameManager = GameObject.Find("GameManager(Clone)");
         Destroy(gameManager);
+        Debug.Log("Will it work?");
         SceneManager.LoadScene("MainMenu");
     }
     
