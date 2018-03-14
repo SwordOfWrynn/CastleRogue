@@ -12,14 +12,11 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance = null;
     public BoardManager boardScript;
     public int playerStaminaPoints = 100;
-    public GameObject adsCanvas;
 
     [HideInInspector] public int playerScorePoints = 0;
     [HideInInspector] public bool playersTurn = true;
     [HideInInspector] public GameObject MainMenuLossButton;
-
-    //private bool testMode = true;
-    //private string gameID = "1732470";
+    
     private Text levelText;
     private GameObject levelImage;
     private List<Enemy> enemies;
@@ -122,77 +119,6 @@ void InitGame () {
     {
         Destroy(gameObject);
         SceneManager.LoadScene("MainMenu");
-    }
-
-
-    /*public void ShowRewardedVideo()
-    {
-        ShowOptions options = new ShowOptions();
-        options.resultCallback = HandleShowResult;
-
-        Advertisement.Show("rewardedVideo", options);
-    }
-
-    public void HandleShowResult(ShowResult result)
-    {
-        if (result == ShowResult.Finished)
-        {
-            Debug.Log("Video completed - Offer a reward to the player");
-            // Reward your player here.
-
-        }
-        else if (result == ShowResult.Skipped)
-        {
-            Debug.LogWarning("Video was skipped - Do NOT reward the player");
-
-        }
-        else if (result == ShowResult.Failed)
-        {
-            Debug.LogError("Video failed to show");
-        }
-    }*/
-    public void ShowDefaultAd()
-    {
-        if (!Advertisement.IsReady())
-        {
-            Debug.Log("Ads not ready for default placement");
-            return;
-        }
-
-        Advertisement.Show();
-    }
-
-    public void ShowRewardedAd()
-    {
-        const string RewardedPlacementId = "rewardedVideo";
-        
-        if (!Advertisement.IsReady(RewardedPlacementId))
-        {
-            Debug.Log(string.Format("Ads not ready for placement '{0}'", RewardedPlacementId));
-            return;
-        }
-
-        var options = new ShowOptions { resultCallback = HandleShowResult };
-        Advertisement.Show(RewardedPlacementId, options);
-    }
-    
-    private void HandleShowResult(ShowResult result)
-    {
-        switch (result)
-        {
-            case ShowResult.Finished:
-                Debug.Log("The ad was successfully shown.");
-                //
-                // YOUR CODE TO REWARD THE GAMER
-                // Give coins etc.
-                break;
-            case ShowResult.Skipped:
-                Debug.Log("The ad was skipped before reaching the end.");
-                break;
-            case ShowResult.Failed:
-                Debug.LogError("The ad failed to be shown.");
-                break;
-        }
     }
     
 }

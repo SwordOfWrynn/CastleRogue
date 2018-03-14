@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Advertisements;
 
 public class Player : MovingObject {
 
@@ -10,12 +11,15 @@ public class Player : MovingObject {
     public int pointsPerCoin = 10;
     public int pointsPerDiamond = 20;
     public int staminaPerPotion = 25;
+    public int staminaPerAd = 50;
     public float restartDelay = 1f;
     public Text staminaText;
     public Text scoreText;
     public int horizontal;
     public int vertical;
+    public GameObject adCanvas;
 
+    private bool hasWatchedAd = false;
     private Animator animator;
     private int stamina;
     private int score;
@@ -143,6 +147,58 @@ public class Player : MovingObject {
     private void CheckIfGameOver()
     {
         if (stamina <= 0)
-            GameManager.instance.GameOver();
+            if (!hasWatchedAd)
+            {
+
+            }
+            else
+                GameManager.instance.GameOver();
+    }
+
+
+    //Ad Code
+
+    public void ShowDefaultAd()
+    {
+        if (!Advertisement.IsReady())
+        {
+            Debug.Log("Ads not ready for default placement");
+            return;
+        }
+
+        Advertisement.Show();
+    }
+
+    public void ShowRewardedAd()
+    {
+        const string RewardedPlacementId = "rewardedVideo";
+
+        if (!Advertisement.IsReady(RewardedPlacementId))
+        {
+            Debug.Log(string.Format("Ads not ready for placement '{0}'", RewardedPlacementId));
+            return;
+        }
+
+        var options = new ShowOptions { resultCallback = HandleShowResult };
+        Advertisement.Show(RewardedPlacementId, options);
+    }
+
+    private void HandleShowResult(ShowResult result)
+    {
+        switch (result)
+        {
+            case ShowResult.Finished:
+                Debug.Log("The ad was successfully shown.");
+                //
+                // YOUR CODE TO REWARD THE GAMER
+                // Give coins etc.
+                break;
+            case ShowResult.Skipped:
+                Debug.Log("The ad was skipped before reaching the end.");
+                break;
+            case ShowResult.Failed:
+                Debug.LogError("The ad failed to be shown.");
+                break;
+        }
     }
 }
