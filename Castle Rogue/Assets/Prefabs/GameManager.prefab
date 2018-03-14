@@ -171,7 +171,8 @@ MonoBehaviour:
   levelStartDelay: 2
   turnDelay: 0.1
   boardScript: {fileID: 0}
-  playerStaminaPoints: 100
+  playerStaminaPoints: 1
   playerScorePoints: 0
   playersTurn: 1
+  MainMenuLossButton: {fileID: 0}
   level: 0

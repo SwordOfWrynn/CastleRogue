@@ -18,6 +18,7 @@ public class Player : MovingObject {
     public int horizontal;
     public int vertical;
     public GameObject adCanvas;
+    public GameObject menuButton;
 
     private bool hasWatchedAd = false;
     private Animator animator;
@@ -26,6 +27,7 @@ public class Player : MovingObject {
 
 	// Use this for initialization
 	protected override void Start () {
+        adCanvas.SetActive(false);
         animator = GetComponent<Animator>();
         stamina = GameManager.instance.playerStaminaPoints;
         staminaText.text = ("Stamina: " + stamina);
@@ -149,15 +151,21 @@ public class Player : MovingObject {
         if (stamina <= 0)
             if (!hasWatchedAd)
             {
-
+                adCanvas.SetActive(true);
+                Time.timeScale = 0;
             }
             else
                 GameManager.instance.GameOver();
     }
 
-
     //Ad Code
 
+    public void NoToAds()
+    {
+        Time.timeScale = 1;
+        adCanvas.SetActive(false);
+        GameManager.instance.GameOver();
+    }
     public void ShowDefaultAd()
     {
         if (!Advertisement.IsReady())
@@ -172,7 +180,8 @@ public class Player : MovingObject {
     public void ShowRewardedAd()
     {
         const string RewardedPlacementId = "rewardedVideo";
-
+        Time.timeScale = 1;
+        menuButton.SetActive(false);
         if (!Advertisement.IsReady(RewardedPlacementId))
         {
             Debug.Log(string.Format("Ads not ready for placement '{0}'", RewardedPlacementId));
@@ -192,6 +201,10 @@ public class Player : MovingObject {
                 //
                 // YOUR CODE TO REWARD THE GAMER
                 // Give coins etc.
+                adCanvas.SetActive(false);
+                menuButton.SetActive(true);
+                stamina = stamina + staminaPerAd;
+                staminaText.text = ("+" + staminaPerAd + " Stamina: " + stamina);
                 break;
             case ShowResult.Skipped:
                 Debug.Log("The ad was skipped before reaching the end.");

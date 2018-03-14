@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance = null;
     public BoardManager boardScript;
     public int playerStaminaPoints = 100;
+    public GameObject gameManager;
 
     [HideInInspector] public int playerScorePoints = 0;
     [HideInInspector] public bool playersTurn = true;
@@ -61,6 +62,8 @@ public class GameManager : MonoBehaviour {
 }
 
 void InitGame () {
+        gameManager = GameObject.Find("GameManager(Clone)");
+        Debug.Log(gameManager);
         doingSetup = true;
         MainMenuLossButton = GameObject.Find("MainMenuLossButton");
         MainMenuLossButton.SetActive(false);
@@ -117,7 +120,7 @@ void InitGame () {
 
     public void MenuButton()
     {
-        Destroy(gameObject);
+        Destroy(gameManager);
         SceneManager.LoadScene("MainMenu");
     }
     

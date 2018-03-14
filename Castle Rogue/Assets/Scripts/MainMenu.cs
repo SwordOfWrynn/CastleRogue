@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour {
     public GameObject PlayButton;
     public GameObject MenuDummy;
 
-    private string gameID = "1732470";
+    //private string gameID = "1732470";
 
     // Use this for initialization
     void Start () {

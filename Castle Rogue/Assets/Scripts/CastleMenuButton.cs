@@ -21,7 +21,6 @@ public class CastleMenuButton : MonoBehaviour
         no.SetActive(false);
         greyOut.SetActive(false);
         gameManager = GameObject.Find("GameManager(Clone)");
-        Debug.Log(gameManager);
     }
 
     // Update is called once per frame
