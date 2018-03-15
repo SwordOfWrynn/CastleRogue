@@ -22,12 +22,12 @@ public class BoardManager : MonoBehaviour
     public int columns = 8;
     public int rows = 8;
     public Count wallCount = new Count(5, 9);
-    public Count foodCount = new Count(1, 5);
+    public Count itemCount = new Count(1, 5);
     public GameObject exit;
     public GameObject exitDummy;
     public GameObject[] floorTiles;
     public GameObject[] wallTiles;
-    public GameObject[] foodTiles;
+    public GameObject[] itemTiles;
     public GameObject[] enemyTiles;
     public GameObject[] outerWallTiles;
 
@@ -89,10 +89,19 @@ public class BoardManager : MonoBehaviour
     }
     public void SetupScene(int level)
     {
+        if (level % 10 == 0)
+        {
+            columns ++;
+            rows ++;
+            wallCount.minimum ++;
+            wallCount.maximum ++;
+            itemCount.minimum ++;
+            itemCount.maximum ++;
+        }
         BoardSetup();
         InitializeList();
         LayoutObjectAtRandom(wallTiles, wallCount.minimum, wallCount.maximum);
-        LayoutObjectAtRandom(foodTiles, foodCount.minimum, foodCount.maximum);
+        LayoutObjectAtRandom(itemTiles, itemCount.minimum, itemCount.maximum);
         int enemyCount = (int)Mathf.Log(level, 2f);
         LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount);
         Instantiate(exit, new Vector3((columns - 1) * 64, (rows - 1) * 64, 0f), Quaternion.identity);
