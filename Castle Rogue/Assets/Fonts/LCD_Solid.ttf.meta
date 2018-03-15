@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 8e25104d77f1f78498d6ed2100ba45f5
-timeCreated: 1520284816
+guid: 165023467f53f2742ab1def434b73ca7
+timeCreated: 1521137751
 licenseType: Free
 TrueTypeFontImporter:
   externalObjects: {}
@@ -10,9 +10,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Pixeled
+  fontName: LCD Solid
   fontNames:
-  - Pixeled
+  - LCD Solid
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
