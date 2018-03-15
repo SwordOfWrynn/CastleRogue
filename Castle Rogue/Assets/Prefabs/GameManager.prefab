@@ -138,7 +138,7 @@ MonoBehaviour:
   wallCount:
     maximum: 9
     minimum: 5
-  foodCount:
+  itemCount:
     maximum: 5
     minimum: 1
   exit: {fileID: 1937711901282722, guid: 1161fc26341c85d42ae9e96d4de27292, type: 2}
@@ -148,7 +148,7 @@ MonoBehaviour:
   wallTiles:
   - {fileID: 1101458312435808, guid: 526a82fd225806548b260f660a11d4f0, type: 2}
   - {fileID: 1854134572805970, guid: 8f060d6ac1275c64699a746ad236a00e, type: 2}
-  foodTiles:
+  itemTiles:
   - {fileID: 1186850762722824, guid: b31a0616699dd88499d38a3b87c56ff3, type: 2}
   - {fileID: 1812325995612074, guid: c0625518b4881a74595a244e7fdd3707, type: 2}
   - {fileID: 1353710663965466, guid: 886c10e31d29ef746aed9ce8d39b10bd, type: 2}
@@ -171,8 +171,8 @@ MonoBehaviour:
   levelStartDelay: 2
   turnDelay: 0.1
   boardScript: {fileID: 0}
-  playerStaminaPoints: 1
+  playerStaminaPoints: 100
   playerScorePoints: 0
   playersTurn: 1
   MainMenuLossButton: {fileID: 0}
-  level: 0
+  level: 49
