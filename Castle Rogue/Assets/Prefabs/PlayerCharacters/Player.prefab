@@ -201,11 +201,14 @@ MonoBehaviour:
   pointsPerCoin: 10
   pointsPerDiamond: 20
   staminaPerPotion: 25
+  staminaPerAd: 50
   restartDelay: 1
   staminaText: {fileID: 0}
   scoreText: {fileID: 0}
   horizontal: 0
   vertical: 0
+  adCanvas: {fileID: 0}
+  menuButton: {fileID: 0}
 --- !u!114 &114270966531632270
 MonoBehaviour:
   m_ObjectHideFlags: 1
