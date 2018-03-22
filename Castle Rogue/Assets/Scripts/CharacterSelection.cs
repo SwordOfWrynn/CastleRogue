@@ -36,7 +36,7 @@ public class CharacterSelection : MonoBehaviour {
     }
     public void OnClick()
     {
-        purchaseButtonText.text = ("Price" + price);
+        purchaseButtonText.text = ("Price " + price);
         characterName.text = newCharacterName;
         characterDescription.text = newCharacterDescription;
         characterImage.GetComponent<Image>().sprite = newSprite;
@@ -62,8 +62,13 @@ public class CharacterSelection : MonoBehaviour {
     {
         if (money >= price)
         {
+            Debug.Log("great");
             money = money - price;
             femmeFatale = true;
+            Debug.Log(femmeFatale);
+            selectButton.SetActive(true);
+            purchaseButton.SetActive(false);
+            Debug.Log("Wow");
         }
     }
 

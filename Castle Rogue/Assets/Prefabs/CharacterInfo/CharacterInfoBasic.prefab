@@ -340,12 +340,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4d551088ab34b5489f420e535d0faac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  money: 50000
   characterInfo: {fileID: 1875738998766132}
-  purchaseOrSelect: {fileID: 114020314632304316}
-  buttonText: {fileID: 114708618124469128}
+  selectButton: {fileID: 0}
+  purchaseButton: {fileID: 0}
+  purchaseButtonText: {fileID: 0}
   characterName: {fileID: 114338827908139184}
   characterDescription: {fileID: 114880759556095346}
-  characterImage: {fileID: 114388971249972774}
+  characterImage: {fileID: 0}
+  price: 0
+  thisButton: {fileID: 0}
+  newSprite: {fileID: 0}
+  newCharacterName: 
+  newCharacterDescription: 
+  allButtons: []
 --- !u!222 &222233424199554548
 CanvasRenderer:
   m_ObjectHideFlags: 1
