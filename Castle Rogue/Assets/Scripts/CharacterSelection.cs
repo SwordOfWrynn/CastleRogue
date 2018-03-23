@@ -10,25 +10,28 @@ public class CharacterSelection : MonoBehaviour {
     //right character info
     public GameObject[] characterInfo;
     public int characterInfoArrayNumber;
-    public GameObject characterInfoContent;
+    public Transform characterInfoContent;
 
     // Use this for initialization
     void Start ()
     {
-
-	}
+        foreach (Transform child in characterInfoContent.transform)
+        {
+            Destroy(child.gameObject);
+        }
+    }
     public void SetUp()
     {
 
     }
     public void OnClick()
     {
-        
+        foreach (Transform child in characterInfoContent.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        GameObject toInstantiate = characterInfo[characterInfoArrayNumber];
+        GameObject instance = Instantiate(toInstantiate) as GameObject;
+        instance.transform.SetParent(characterInfoContent);
     }
-
-    public void Purchase()
-    {
-
-    }
-
 }
