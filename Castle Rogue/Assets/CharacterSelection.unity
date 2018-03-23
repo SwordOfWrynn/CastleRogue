@@ -136,7 +136,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 57513728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 28.987167, z: 0}
+  m_LocalPosition: {x: 0, y: 22.004395, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1813200007}
@@ -250,11 +250,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 62322201}
---- !u!1 &71279910 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1568366013907032, guid: 3da80bd30c2270e4c8920070c7dc323e,
-    type: 2}
-  m_PrefabInternal: {fileID: 303302719}
 --- !u!1 &169788664
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,12 +510,12 @@ Prefab:
     - target: {fileID: 224288331071781096, guid: 3da80bd30c2270e4c8920070c7dc323e,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 85.85498
+      value: 77.355
       objectReference: {fileID: 0}
     - target: {fileID: 224288331071781096, guid: 3da80bd30c2270e4c8920070c7dc323e,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -472.65143
+      value: -205.7
       objectReference: {fileID: 0}
     - target: {fileID: 224288331071781096, guid: 3da80bd30c2270e4c8920070c7dc323e,
         type: 2}
@@ -634,7 +629,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2118491141}
+      objectReference: {fileID: 0}
     - target: {fileID: 114020314632304316, guid: 3da80bd30c2270e4c8920070c7dc323e,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -674,7 +669,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 350805896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -87.5, y: 232.5, z: 0}
+  m_LocalPosition: {x: -87.5, y: 187.40152, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 851153221}
@@ -755,7 +750,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 404892642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 232.5, z: 0}
+  m_LocalPosition: {x: 0, y: 187.40152, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1987945945}
@@ -824,7 +819,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 416394121}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 232.5, z: 0}
+  m_LocalPosition: {x: 0, y: 187.40152, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1884811933}
@@ -1013,17 +1008,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 436379923}
---- !u!1 &450973589 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1064930503477968, guid: 3da80bd30c2270e4c8920070c7dc323e,
-    type: 2}
-  m_PrefabInternal: {fileID: 303302719}
---- !u!114 &475042269 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114708618124469128, guid: 3da80bd30c2270e4c8920070c7dc323e,
-    type: 2}
-  m_PrefabInternal: {fileID: 303302719}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &598758183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,8 +1033,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 598758183}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 320, y: 240, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalPosition: {x: 457, y: 285.5, z: 0}
+  m_LocalScale: {x: 1.1425, y: 1.1425, z: 1.1425}
   m_Children:
   - {fileID: 432956065}
   - {fileID: 62322202}
@@ -1219,7 +1203,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 690378594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 87.5, y: 10, z: 0}
+  m_LocalPosition: {x: 79, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1176247607}
@@ -1231,12 +1215,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &691190054 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114338827908139184, guid: 3da80bd30c2270e4c8920070c7dc323e,
-    type: 2}
-  m_PrefabInternal: {fileID: 303302719}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &800329684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1373,11 +1351,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 821199761}
---- !u!1 &829698974 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1875738998766132, guid: 3da80bd30c2270e4c8920070c7dc323e,
-    type: 2}
-  m_PrefabInternal: {fileID: 303302719}
 --- !u!1 &851153220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,7 +1583,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1349083816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -87.50001, y: 232.5, z: 0}
+  m_LocalPosition: {x: -87.50001, y: 187.40152, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1956874663}
@@ -1667,12 +1640,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
---- !u!114 &1356673166 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114880759556095346, guid: 3da80bd30c2270e4c8920070c7dc323e,
-    type: 2}
-  m_PrefabInternal: {fileID: 303302719}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1375702164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1684,7 +1651,6 @@ GameObject:
   - component: {fileID: 1375702169}
   - component: {fileID: 1375702168}
   - component: {fileID: 1375702167}
-  - component: {fileID: 1375702166}
   m_Layer: 0
   m_Name: Femme Fatale Button
   m_TagString: Untagged
@@ -1699,7 +1665,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1375702164}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 86.00002, y: -198.45001, z: 0}
+  m_LocalPosition: {x: 77.5, y: -174, z: 0}
   m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
   m_Children:
   - {fileID: 1678903331}
@@ -1712,33 +1678,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1.4999847, y: -0.000030517578}
   m_SizeDelta: {x: 155, y: 116}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1375702166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1375702164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4d551088ab34b5489f420e535d0faac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  money: 50000
-  characterInfo: {fileID: 829698974}
-  selectButton: {fileID: 2009109010}
-  purchaseButton: {fileID: 450973589}
-  purchaseButtonText: {fileID: 475042269}
-  characterName: {fileID: 691190054}
-  characterDescription: {fileID: 1356673166}
-  characterImage: {fileID: 71279910}
-  price: 5
-  thisButton: {fileID: 1375702167}
-  newSprite: {fileID: 21300004, guid: f08556effefe7f447902dcc92bc02906, type: 3}
-  newCharacterName: Femme Fatale
-  newCharacterDescription: Your other basic thief
-  allButtons:
-  - {fileID: 2118491138}
-  - {fileID: 1375702167}
 --- !u!114 &1375702167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1778,7 +1717,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1375702166}
+      - m_Target: {fileID: 0}
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -1851,7 +1790,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1526264897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: -232.5, z: 0}
+  m_LocalPosition: {x: -10, y: -178.90152, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1116982454}
@@ -1888,7 +1827,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1554299340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -87.5, y: -232.5, z: 0}
+  m_LocalPosition: {x: -87.5, y: -187.40152, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 690378595}
@@ -2145,7 +2084,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1813200006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: -232.5, z: 0}
+  m_LocalPosition: {x: -10, y: -178.90152, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 57513729}
@@ -2179,7 +2118,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1826096990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 87.50001, y: 10, z: 0}
+  m_LocalPosition: {x: 79.00001, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 821199762}
@@ -2290,7 +2229,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1906289784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -87.50001, y: -232.5, z: 0}
+  m_LocalPosition: {x: -87.50001, y: -187.40152, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1826096991}
@@ -2406,7 +2345,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1919871743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 87.50001, y: 232.5, z: 0}
+  m_LocalPosition: {x: 87.50001, y: 187.40152, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1526264898}
@@ -2522,7 +2461,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1944302174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 87.5, y: 232.5, z: 0}
+  m_LocalPosition: {x: 87.5, y: 187.40152, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1813200007}
@@ -2637,7 +2576,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1956874662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 22.096954, z: 0}
+  m_LocalPosition: {x: 0, y: -0.000030517578, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2118491137}
@@ -2647,7 +2586,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 22.096954}
+  m_AnchoredPosition: {x: 0, y: -0.000030517578}
   m_SizeDelta: {x: 0, y: 396.9}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1956874664
@@ -2991,7 +2930,6 @@ GameObject:
   - component: {fileID: 2118491140}
   - component: {fileID: 2118491139}
   - component: {fileID: 2118491138}
-  - component: {fileID: 2118491141}
   m_Layer: 0
   m_Name: RogueButton
   m_TagString: Untagged
@@ -3006,7 +2944,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2118491136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.99997, y: -598.2421, z: 0}
+  m_LocalPosition: {x: 77.5, y: -58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 436379924}
@@ -3058,7 +2996,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2118491141}
+      - m_Target: {fileID: 0}
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -3104,30 +3042,3 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2118491136}
---- !u!114 &2118491141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2118491136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4d551088ab34b5489f420e535d0faac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  money: 50000
-  characterInfo: {fileID: 829698974}
-  selectButton: {fileID: 2009109010}
-  purchaseButton: {fileID: 450973589}
-  purchaseButtonText: {fileID: 475042269}
-  characterName: {fileID: 691190054}
-  characterDescription: {fileID: 1356673166}
-  characterImage: {fileID: 71279910}
-  price: 0
-  thisButton: {fileID: 2118491138}
-  newSprite: {fileID: 21300004, guid: 8ce1c0dcf2c189d4c9c70fc1a5d36ef7, type: 3}
-  newCharacterName: Rogue
-  newCharacterDescription: Your basic thief
-  allButtons:
-  - {fileID: 2118491138}
-  - {fileID: 1375702167}

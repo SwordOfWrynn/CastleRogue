@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour {
     private List<Enemy> enemies;
     private bool enemiesMoving;
     private bool doingSetup;
+    private bool firstRoom = true;
     
     public int level = 1;
     
@@ -37,27 +38,33 @@ public class GameManager : MonoBehaviour {
         boardScript = GetComponent<BoardManager>();
         //InitGame();
 	}
-
-    //This is called each time a scene is loaded.
-    void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
-    {
-        //Add one to our level number.
-        level++;
-        Debug.Log("Level " + level);
-        //Call InitGame to initialize our level.
-        InitGame();
-    }
     void OnEnable()
     {
-        //Tell our ‘OnLevelFinishedLoading’ function to start listening for a scene change event as soon as this script is enabled.
-        SceneManager.sceneLoaded += OnLevelFinishedLoading;
+            //Tell our ‘OnLevelFinishedLoading’ function to start listening for a scene change event as soon as this script is enabled.
+            SceneManager.sceneLoaded += OnLevelFinishedLoading;
     }
     void OnDisable()
     {
         //Tell our ‘OnLevelFinishedLoading’ function to stop listening for a scene change event as soon as this script is disabled.
         //Remember to always have an unsubscription for every delegate you subscribe to!
         SceneManager.sceneLoaded -= OnLevelFinishedLoading;
-}
+    }
+    //This is called each time a scene is loaded.
+    void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
+    {
+        //Add one to our level number.
+        if (firstRoom == true)
+        {
+            firstRoom = false;
+            InitGame();
+            return;
+        }
+        level++;
+        Debug.Log("Level " + level);
+        //Call InitGame to initialize our level.
+        InitGame();
+    }
+   
 
 void InitGame () {
         doingSetup = true;
