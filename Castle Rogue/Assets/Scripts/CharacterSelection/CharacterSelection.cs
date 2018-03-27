@@ -11,7 +11,7 @@ public class CharacterSelection : MonoBehaviour {
     public GameObject[] characterInfo;
     public int characterInfoArrayNumber;
     public Transform characterInfoContent;
-    public CharacterInfo instanceCharacterInfo;
+    private CharacterInfo instanceCharacterInfo;
 
     // Use this for initialization
     void Start ()

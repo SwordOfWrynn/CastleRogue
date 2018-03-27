@@ -6,15 +6,13 @@ using UnityEngine;
 
 public class CurrencyManager : MonoBehaviour {
 
-
+    public int money;
 
 
 
 	// Use this for initialization
 	private void Start () {
         DontDestroyOnLoad(gameObject);
-
-
 	}
 	
 	// Update is called once per frame

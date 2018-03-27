@@ -10,11 +10,16 @@ public class CharacterInfo : MonoBehaviour {
     public Button purchaseButton;
     public Button selectButton;
     public int characterInfoArrayNumber;
+    public int price = 0;
+    public CurrencyManager currencyManager;
 
+    private int money;
     private bool FemmeFatale = false;
 
 	// Use this for initialization
 	void Start () {
+        GameObject currencyManagerObject = GameObject.Find("CurrencyManager");
+        currencyManager = currencyManagerObject.GetComponent<CurrencyManager>();
 		if (FemmeFatale == true)
         {
             purchaseButton.gameObject.SetActive(false);
@@ -28,11 +33,15 @@ public class CharacterInfo : MonoBehaviour {
 	}
     void Purchase()
     {
-
+        money = currencyManager.money;
+        if (price <= money)
+        {
+            FemmeFatale = true;
+        }
     }
     private void Select()
     {
-
+        
         //saving the selection
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Open(Application.persistentDataPath + "/SelectedCharacter.dat", FileMode.OpenOrCreate);
