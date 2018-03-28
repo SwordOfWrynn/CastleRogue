@@ -11,7 +11,7 @@ public class CharacterSelection : MonoBehaviour {
     public GameObject[] characterInfo;
     public int characterInfoArrayNumber;
     public Transform characterInfoContent;
-    private CharacterInfo instanceCharacterInfo;
+    //private CharacterInfo instanceCharacterInfo;
 
     // Use this for initialization
     void Start ()
@@ -34,7 +34,7 @@ public class CharacterSelection : MonoBehaviour {
         GameObject toInstantiate = characterInfo[characterInfoArrayNumber];
         GameObject instance = Instantiate(toInstantiate) as GameObject;
         instance.transform.SetParent(characterInfoContent);
-        instanceCharacterInfo = instance.GetComponent<CharacterInfo>();
+        CharacterInfo instanceCharacterInfo = instance.GetComponent<CharacterInfo>();
         instanceCharacterInfo.characterInfoArrayNumber = characterInfoArrayNumber;
     }
 }

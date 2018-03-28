@@ -13,6 +13,7 @@ public class CurrencyManager : MonoBehaviour {
 	// Use this for initialization
 	private void Start () {
         DontDestroyOnLoad(gameObject);
+        money = 500000;
 	}
 	
 	// Update is called once per frame
