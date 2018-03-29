@@ -32,7 +32,12 @@ public class CurrencyManager : MonoBehaviour {
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/Money.dat", FileMode.Open);
+
+            //object myLoadedInfoT = bf.Deserialize(file);
+            //Debug.Log(myLoadedInfoT.GetType().FullName);
+
             MoneyInfo myLoadedInfo = (MoneyInfo)bf.Deserialize(file);
+            
             money = myLoadedInfo.money;
         }
         //else

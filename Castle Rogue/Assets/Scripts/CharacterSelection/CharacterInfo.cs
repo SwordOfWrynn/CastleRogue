@@ -19,6 +19,7 @@ public class CharacterInfo : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        selectButton.gameObject.SetActive(false);
         isBought = new bool[characterInfoArrayNumber + 1];
         GameObject currencyManagerObject = GameObject.Find("CurrencyManager");
         currencyManager = currencyManagerObject.GetComponent<CurrencyManager>();
@@ -51,18 +52,14 @@ public class CharacterInfo : MonoBehaviour {
     }
     public void Select()
     {
-        
+
         //saving the selection
+        Debug.Log("foo");
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Open(Application.persistentDataPath + "/SelectedCharacter.dat", FileMode.OpenOrCreate);
         SelectInfo myInfo = new SelectInfo();
         myInfo.character = characterInfoArrayNumber;
         bf.Serialize(file, myInfo);
         file.Close();
-    }
-    [System.Serializable]
-    public class SelectInfo
-    {
-        public int character;
     }
 }

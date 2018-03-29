@@ -20,7 +20,7 @@ public class SaveLoadExample : MonoBehaviour
         FileStream file = File.Open(Application.persistentDataPath + "/File Name Here No Space.dat", FileMode.OpenOrCreate);
         UnlockInfo myInfo = new UnlockInfo();
 
-        //put what ever you're saveing as myInfo.whatever
+        //put what ever you're saving as myInfo.whatever
         myInfo.unlock = unlock;
         bf.Serialize(file, myInfo);
         file.Close();
