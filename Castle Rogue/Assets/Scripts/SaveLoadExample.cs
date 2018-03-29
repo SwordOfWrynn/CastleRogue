@@ -30,7 +30,7 @@ public class SaveLoadExample : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/File Name Here No Space.dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "File Name Here No Space.dat", FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + "/File Name Here No Space.dat", FileMode.Open);
             UnlockInfo myLoadedInfo = (UnlockInfo)bf.Deserialize(file);
             unlock = myLoadedInfo.unlock;
         }

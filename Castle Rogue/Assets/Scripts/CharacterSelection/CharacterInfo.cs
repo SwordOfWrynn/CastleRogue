@@ -19,11 +19,12 @@ public class CharacterInfo : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        isBought = new bool[characterInfoArrayNumber];
-        money = currencyManager.money;
-        Debug.Log("Array Number = " + characterInfoArrayNumber);
+        isBought = new bool[characterInfoArrayNumber + 1];
         GameObject currencyManagerObject = GameObject.Find("CurrencyManager");
         currencyManager = currencyManagerObject.GetComponent<CurrencyManager>();
+        money = currencyManager.money;
+        Debug.Log("Money = " + money);
+        Debug.Log("Array Number = " + characterInfoArrayNumber);
 		if (isBought[characterInfoArrayNumber] == true)
         {
             purchaseButton.gameObject.SetActive(false);
@@ -35,8 +36,9 @@ public class CharacterInfo : MonoBehaviour {
 	void Update () {
 		
 	}
-    void Purchase()
+    public void Purchase()
     {
+        Debug.Log("Here");
         money = currencyManager.money;
         if (price <= money)
         {
@@ -47,7 +49,7 @@ public class CharacterInfo : MonoBehaviour {
             currencyManager.money = money;
         }
     }
-    private void Select()
+    public void Select()
     {
         
         //saving the selection

@@ -6,7 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class CreateSelectedPlayer : MonoBehaviour {
 
-    private int character;
+    private int selectedCharacter;
 
     public GameObject[] characterPrefabs;
 	// Use this for initialization
@@ -16,17 +16,18 @@ public class CreateSelectedPlayer : MonoBehaviour {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/SelectedCharacter.dat", FileMode.Open);
             SelectInfo myLoadedInfo = (SelectInfo)bf.Deserialize(file);
-            character = myLoadedInfo.character;
+            selectedCharacter = myLoadedInfo.character;
         }
         else
-            character = 0;
-        Instantiate(characterPrefabs[character], new Vector3(0f, 0f, 0f), Quaternion.identity);
+            selectedCharacter = 0;
+        Instantiate(characterPrefabs[selectedCharacter], new Vector3(0f, 0f, 0f), Quaternion.identity);
     }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+    [System.Serializable]
     public class SelectInfo
     {
         public int character;

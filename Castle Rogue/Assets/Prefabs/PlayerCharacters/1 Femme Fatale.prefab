@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 61928200626514178}
   - component: {fileID: 114003073026874758}
   m_Layer: 8
-  m_Name: Femme Fatale
+  m_Name: 1 Femme Fatale
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
