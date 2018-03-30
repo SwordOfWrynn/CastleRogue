@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 10639064}
   - component: {fileID: 10639063}
   m_Layer: 5
-  m_Name: asCanvas
+  m_Name: adCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,7 +202,7 @@ RectTransform:
   - {fileID: 1221756600}
   - {fileID: 1953919937}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -682,84 +682,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &501307131 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114018982751418748, guid: 21a8469c9e54247428d90a79ee6c27d6,
-    type: 2}
-  m_PrefabInternal: {fileID: 562309930}
-  m_Script: {fileID: 11500000, guid: 6b70efc4658a0b541887cb22b6d0b194, type: 3}
---- !u!1001 &562309930
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4558512122697756, guid: 21a8469c9e54247428d90a79ee6c27d6, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4558512122697756, guid: 21a8469c9e54247428d90a79ee6c27d6, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4558512122697756, guid: 21a8469c9e54247428d90a79ee6c27d6, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4558512122697756, guid: 21a8469c9e54247428d90a79ee6c27d6, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4558512122697756, guid: 21a8469c9e54247428d90a79ee6c27d6, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4558512122697756, guid: 21a8469c9e54247428d90a79ee6c27d6, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4558512122697756, guid: 21a8469c9e54247428d90a79ee6c27d6, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4558512122697756, guid: 21a8469c9e54247428d90a79ee6c27d6, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114018982751418748, guid: 21a8469c9e54247428d90a79ee6c27d6,
-        type: 2}
-      propertyPath: staminaText
-      value: 
-      objectReference: {fileID: 187852816}
-    - target: {fileID: 114018982751418748, guid: 21a8469c9e54247428d90a79ee6c27d6,
-        type: 2}
-      propertyPath: scoreText
-      value: 
-      objectReference: {fileID: 1547471404}
-    - target: {fileID: 114018982751418748, guid: 21a8469c9e54247428d90a79ee6c27d6,
-        type: 2}
-      propertyPath: adCanvas
-      value: 
-      objectReference: {fileID: 10639062}
-    - target: {fileID: 114018982751418748, guid: 21a8469c9e54247428d90a79ee6c27d6,
-        type: 2}
-      propertyPath: menuButton
-      value: 
-      objectReference: {fileID: 1311688005}
-    - target: {fileID: 1898165656745690, guid: 21a8469c9e54247428d90a79ee6c27d6, type: 2}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1898165656745690, guid: 21a8469c9e54247428d90a79ee6c27d6, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 21a8469c9e54247428d90a79ee6c27d6, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &687126718
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,7 +995,7 @@ RectTransform:
   - {fileID: 1799089403}
   - {fileID: 1753437968}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1229,7 +1153,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 501307131}
+      - m_Target: {fileID: 0}
         m_MethodName: DownButton
         m_Mode: 1
         m_Arguments:
@@ -1351,7 +1275,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 501307131}
+      - m_Target: {fileID: 0}
         m_MethodName: ShowRewardedAd
         m_Mode: 1
         m_Arguments:
@@ -1754,7 +1678,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 501307131}
+      - m_Target: {fileID: 0}
         m_MethodName: LeftButton
         m_Mode: 1
         m_Arguments:
@@ -1875,7 +1799,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 501307131}
+      - m_Target: {fileID: 0}
         m_MethodName: RightButton
         m_Mode: 1
         m_Arguments:
@@ -2158,7 +2082,7 @@ RectTransform:
   - {fileID: 1547471403}
   - {fileID: 1330937578}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2418,6 +2342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1876714385}
   - component: {fileID: 1876714384}
+  - component: {fileID: 1876714386}
   m_Layer: 0
   m_Name: LoadPlayer
   m_TagString: Untagged
@@ -2450,8 +2375,21 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1876714386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1876714383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0ff98bfea31f574ba5f7b8ed3f598b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1620687325885062, guid: 1146c50e43873774da1d66803efd3808,
+    type: 2}
 --- !u!1 &1953919936
 GameObject:
   m_ObjectHideFlags: 0
@@ -2528,7 +2466,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 501307131}
+      - m_Target: {fileID: 0}
         m_MethodName: NoToAds
         m_Mode: 1
         m_Arguments:
@@ -2649,7 +2587,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 501307131}
+      - m_Target: {fileID: 0}
         m_MethodName: UpButton
         m_Mode: 1
         m_Arguments:

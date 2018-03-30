@@ -35,9 +35,9 @@ public class SaveLoadExample : MonoBehaviour
             unlock = myLoadedInfo.unlock;
         }
     }
-    [System.Serializable]
-    public class UnlockInfo
-    {
-        public int unlock;
-    }
+}
+[System.Serializable]
+public class UnlockInfo
+{
+    public int unlock;
 }

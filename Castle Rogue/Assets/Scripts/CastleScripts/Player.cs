@@ -27,6 +27,11 @@ public class Player : MovingObject {
 
 	// Use this for initialization
 	protected override void Start () {
+        staminaText = GameObject.Find("staminaText").GetComponent<Text>();
+        scoreText = GameObject.Find("scoreText").GetComponent<Text>();
+        adCanvas = GameObject.Find("adCanvas");
+        menuButton = GameObject.Find("MenuButton");
+
         adCanvas.SetActive(false);
         animator = GetComponent<Animator>();
         stamina = GameManager.instance.playerStaminaPoints;

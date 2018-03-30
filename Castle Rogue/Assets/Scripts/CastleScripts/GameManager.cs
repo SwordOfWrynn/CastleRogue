@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour {
    
 
 void InitGame () {
+        Debug.Log("Foo");
         doingSetup = true;
         MainMenuLossButton = GameObject.Find("MainMenuLossButton");
         MainMenuLossButton.SetActive(false);
