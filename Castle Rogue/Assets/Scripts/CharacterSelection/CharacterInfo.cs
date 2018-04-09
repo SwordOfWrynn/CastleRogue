@@ -24,9 +24,10 @@ public class CharacterInfo : MonoBehaviour {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/Purchases.dat", FileMode.Open);
             PurchaseInfo myLoadedInfo = (PurchaseInfo)bf.Deserialize(file);
-            isBought[characterInfoArrayNumber + 1] = myLoadedInfo.purchase[characterInfoArrayNumber + 1];
+            isBought = myLoadedInfo.purchase;
         }
-
+        else
+            isBought = new bool [100];
         selectButton.gameObject.SetActive(false);
         GameObject currencyManagerObject = GameObject.Find("CurrencyManager");
         currencyManager = currencyManagerObject.GetComponent<CurrencyManager>();
