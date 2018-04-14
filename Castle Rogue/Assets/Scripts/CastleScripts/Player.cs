@@ -7,6 +7,7 @@ using UnityEngine.Advertisements;
 
 public class Player : MovingObject {
 
+    public int enemyDamage = 1;
     public int WallDamage = 1;
     public int pointsPerCoin = 10;
     public int pointsPerDiamond = 20;
@@ -20,6 +21,9 @@ public class Player : MovingObject {
     public GameObject adCanvas;
     public GameObject menuButton;
 
+    private Button yesAd;
+    private Button noAd;
+
     private bool hasWatchedAd = false;
     private Animator animator;
     private int stamina;
@@ -31,7 +35,10 @@ public class Player : MovingObject {
         scoreText = GameObject.Find("scoreText").GetComponent<Text>();
         adCanvas = GameObject.Find("adCanvas");
         menuButton = GameObject.Find("MenuButton");
-
+        yesAd = GameObject.Find("YesAd").GetComponent<Button>();
+        yesAd.onClick.AddListener(ShowRewardedAd);
+        noAd = GameObject.Find("NoAd").GetComponent<Button>();
+        noAd.onClick.AddListener(NoToAds);
         adCanvas.SetActive(false);
         animator = GetComponent<Animator>();
         stamina = GameManager.instance.playerStaminaPoints;
@@ -69,6 +76,7 @@ public class Player : MovingObject {
         if (horizontal != 0 || vertical != 0)
         {
             AttemptMove<InnerWalls>(horizontal, vertical);
+            AttemptMove<Enemy>(horizontal, vertical);
             horizontal = 0;
             vertical = 0;
         }
@@ -106,9 +114,18 @@ public class Player : MovingObject {
 
     protected override void OnCantMove<T>(T component)
     {
-        InnerWalls hitWall = component as InnerWalls;
-        hitWall.DamageWall(WallDamage);
-        animator.SetTrigger("rogueAttack");
+        if (component is InnerWalls)
+        {
+            InnerWalls hitWall = component as InnerWalls;
+            hitWall.DamageWall(WallDamage);
+            animator.SetTrigger("rogueAttack");
+        }
+        else
+        {
+            Enemy hitEnemy = component as Enemy;
+            hitEnemy.DamageEnemy(enemyDamage);
+            animator.SetTrigger("rogueAttack");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -206,7 +223,8 @@ public class Player : MovingObject {
                 //
                 // YOUR CODE TO REWARD THE GAMER
                 // Give coins etc.
-                adCanvas.SetActive(false);
+                if(adCanvas != null)
+                    adCanvas.SetActive(false);
                 menuButton.SetActive(true);
                 stamina = stamina + staminaPerAd;
                 staminaText.text = ("+" + staminaPerAd + " Stamina: " + stamina);

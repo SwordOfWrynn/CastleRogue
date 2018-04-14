@@ -103,6 +103,10 @@ void InitGame () {
     {
         enemies.Add(script);
     }
+    public void RemoveEnemiesFromList(Enemy script)
+    {
+        enemies.Remove(script);
+    }
 
 
     IEnumerator MoveEnemies()

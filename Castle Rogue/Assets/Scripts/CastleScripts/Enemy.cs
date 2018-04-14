@@ -6,6 +6,7 @@ using UnityEngine;
 public class Enemy : MovingObject {
 
     public int playerDamage;
+    public int enemyHealth = 2;
 
     private Animator animator;
     private Transform target;
@@ -44,6 +45,15 @@ public class Enemy : MovingObject {
         Player hitPlayer = component as Player;
         animator.SetTrigger("enemyAttack");
         hitPlayer.LoseStamina(playerDamage);
+    }
+    public void DamageEnemy(int loss)
+    {
+        enemyHealth -= loss;
+        if(enemyHealth <= 0)
+        {
+            Destroy(gameObject);
+            GameManager.instance.RemoveEnemiesFromList(this);
+        }
     }
     
 }

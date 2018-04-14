@@ -59,7 +59,11 @@ public abstract class MovingObject : MonoBehaviour {
 
         T hitComponent = hit.transform.GetComponent<T>();
         if (!canMove && hitComponent != null)
+        {
             OnCantMove(hitComponent);
+            return;
+        }
+        return;
     }
 
     protected abstract void OnCantMove<T>(T component)
