@@ -21,6 +21,10 @@ public class Player : MovingObject {
     public GameObject adCanvas;
     public GameObject menuButton;
 
+    private Button rightArrow;
+    private Button upArrow;
+    private Button leftArrow;
+    private Button downArrow;
     private Button yesAd;
     private Button noAd;
 
@@ -37,6 +41,14 @@ public class Player : MovingObject {
         menuButton = GameObject.Find("MenuButton");
         yesAd = GameObject.Find("YesAd").GetComponent<Button>();
         yesAd.onClick.AddListener(ShowRewardedAd);
+        rightArrow = GameObject.Find("RightArrow").GetComponent<Button>();
+        rightArrow.onClick.AddListener(RightButton);
+        upArrow = GameObject.Find("UpArrow").GetComponent<Button>();
+        upArrow.onClick.AddListener(UpButton);
+        leftArrow = GameObject.Find("LeftArrow").GetComponent<Button>();
+        leftArrow.onClick.AddListener(LeftButton);
+        downArrow = GameObject.Find("DownArrow").GetComponent<Button>();
+        downArrow.onClick.AddListener(DownButton);
         noAd = GameObject.Find("NoAd").GetComponent<Button>();
         noAd.onClick.AddListener(NoToAds);
         adCanvas.SetActive(false);
