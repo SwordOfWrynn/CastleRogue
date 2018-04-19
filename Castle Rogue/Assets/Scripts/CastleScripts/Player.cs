@@ -7,8 +7,7 @@ using UnityEngine.Advertisements;
 
 public class Player : MovingObject {
 
-    public int enemyDamage = 1;
-    public int WallDamage = 1;
+    public int Damage = 1;
     public int pointsPerCoin = 10;
     public int pointsPerDiamond = 20;
     public int staminaPerPotion = 25;
@@ -88,7 +87,6 @@ public class Player : MovingObject {
         if (horizontal != 0 || vertical != 0)
         {
             AttemptMove<InnerWalls>(horizontal, vertical);
-            AttemptMove<Enemy>(horizontal, vertical);
             horizontal = 0;
             vertical = 0;
         }
@@ -130,16 +128,10 @@ public class Player : MovingObject {
         if (component is InnerWalls)
         {
             InnerWalls hitWall = component as InnerWalls;
-            hitWall.DamageWall(WallDamage);
+            hitWall.DamageWall(Damage);
             animator.SetTrigger("rogueAttack");
         }
-        else
-        {
-            Enemy hitEnemy = component as Enemy;
-            hitEnemy.DamageEnemy(enemyDamage);
-            animator.SetTrigger("rogueAttack");
-        }
-    }
+    }   
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -206,6 +198,9 @@ public class Player : MovingObject {
         if (!Advertisement.IsReady())
         {
             Debug.Log("Ads not ready for default placement");
+            if (adCanvas != null)
+                adCanvas.SetActive(false);
+            menuButton.SetActive(true);
             return;
         }
 
@@ -220,6 +215,9 @@ public class Player : MovingObject {
         if (!Advertisement.IsReady(RewardedPlacementId))
         {
             Debug.Log(string.Format("Ads not ready for placement '{0}'", RewardedPlacementId));
+            if (adCanvas != null)
+                adCanvas.SetActive(false);
+            menuButton.SetActive(true);
             return;
         }
 

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 61732202362305490}
   - component: {fileID: 50032317269955508}
   - component: {fileID: 114109460634463324}
+  - component: {fileID: 114531854466261892}
   m_Layer: 8
   m_Name: Knight1
   m_TagString: Enemy
@@ -122,6 +123,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   playerDamage: 10
+  enemyHealth: 2
+--- !u!114 &114531854466261892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1935024789310076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a621d0480cb074b890d8a4b79e3bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmgSprite: {fileID: 0}
+  hp: 4
 --- !u!212 &212493283904582934
 SpriteRenderer:
   m_ObjectHideFlags: 1

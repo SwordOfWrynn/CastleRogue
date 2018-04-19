@@ -12,9 +12,16 @@ public class InnerWalls : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        if (gameObject.GetComponent<Enemy>() != null)
+            dmgSprite = null;
 	}
 	public void DamageWall (int loss)
     {
+        if(gameObject.GetComponent<Enemy>() != null)
+        {
+            Enemy enemy = gameObject.GetComponent<Enemy>();
+            enemy.DamageEnemy(loss);
+        }
         spriteRenderer.sprite = dmgSprite;
         hp -= loss;
         if (hp <= 0)
