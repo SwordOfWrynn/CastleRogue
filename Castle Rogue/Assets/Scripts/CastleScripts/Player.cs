@@ -115,6 +115,7 @@ public class Player : MovingObject {
     protected override void AttemptMove<T>(int xDir, int yDir)
     {
         stamina--;
+        Debug.Log("Stamina Move Loss");
         staminaText.text = ("Stamina: " + stamina);
         scoreText.text = ("Score: " + score);
         base.AttemptMove<T>(xDir, yDir);
