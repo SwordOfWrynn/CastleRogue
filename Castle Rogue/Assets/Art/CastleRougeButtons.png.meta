@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: a17e1dd6b5b2a064895852bd517d07ad
-timeCreated: 1520537086
+guid: d6cbb930f7b3a3b4fb2269ba126f0cc3
+timeCreated: 1524594316
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -10,6 +10,7 @@ TextureImporter:
     21300006: CastleRougeButtons_3
     21300008: CastleRougeButtons_4
     21300010: CastleRougeButtons_5
+    21300012: CastleRougeButtons_6
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -28,7 +29,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -48,7 +49,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -71,6 +72,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -80,6 +82,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -89,6 +92,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -124,8 +128,8 @@ TextureImporter:
       name: CastleRougeButtons_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 128
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -138,7 +142,7 @@ TextureImporter:
       name: CastleRougeButtons_3
       rect:
         serializedVersion: 2
-        x: 64
+        x: 0
         y: 64
         width: 64
         height: 64
@@ -152,8 +156,8 @@ TextureImporter:
       name: CastleRougeButtons_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 64
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -166,7 +170,21 @@ TextureImporter:
       name: CastleRougeButtons_5
       rect:
         serializedVersion: 2
-        x: 64
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CastleRougeButtons_6
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
         width: 64
         height: 64
