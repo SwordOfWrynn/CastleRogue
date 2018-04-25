@@ -7,6 +7,7 @@ using UnityEngine.Advertisements;
 
 public class Player : MovingObject {
 
+    [Header("Stuff")]
     public int Damage = 1;
     public int pointsPerCoin = 10;
     public int pointsPerDiamond = 20;
@@ -186,7 +187,7 @@ public class Player : MovingObject {
     }
 
     //Ad Code
-
+    #region Advertisments
     public void NoToAds()
     {
         Time.timeScale = 1;
@@ -248,4 +249,5 @@ public class Player : MovingObject {
                 break;
         }
     }
+    #endregion
 }
