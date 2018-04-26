@@ -7,26 +7,30 @@ using UnityEngine.Advertisements;
 
 public class Player : MovingObject {
 
-    [Header("Stuff")]
     public int Damage = 1;
     public int pointsPerCoin = 10;
     public int pointsPerDiamond = 20;
     public int staminaPerPotion = 25;
-    public int staminaPerAd = 50;
-    public float restartDelay = 1f;
-    public Text staminaText;
-    public Text scoreText;
     public int horizontal;
     public int vertical;
     public GameObject adCanvas;
     public GameObject menuButton;
-
+    
     private Button rightArrow;
     private Button upArrow;
     private Button leftArrow;
     private Button downArrow;
     private Button yesAd;
     private Button noAd;
+
+    [SerializeField]
+    private float restartDelay = 1f;
+    [SerializeField]
+    private Text staminaText;
+    [SerializeField]
+    private Text scoreText;
+    [SerializeField]
+    private int staminaPerAd = 50;
 
     private bool hasWatchedAd = false;
     private Animator animator;

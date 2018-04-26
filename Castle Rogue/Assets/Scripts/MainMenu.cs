@@ -8,13 +8,12 @@ public class MainMenu : MonoBehaviour {
 
     public GameObject PlayButton;
     public GameObject MenuDummy;
-
-    //private string gameID = "1732470";
+    public GameObject infoPanel;
 
     // Use this for initialization
     void Start () {
         MenuDummy.SetActive(false);
-        //Advertisement.Initialize(string gameID);
+        infoPanel.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -47,6 +46,17 @@ public class MainMenu : MonoBehaviour {
         PlayButton.SetActive(false);
         MenuDummy.SetActive(true);
     }
+
+    public void OpenInfoDisplay()
+    {
+        infoPanel.SetActive(true);
+    }
+
+    public void CloseInfoDisplay()
+    {
+        infoPanel.SetActive(false);
+    }
+
     public void Credits()
     {
         SceneManager.LoadScene("Testing");
