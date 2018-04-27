@@ -11,37 +11,44 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance = null;
     public BoardManager boardScript;
     public int playerStaminaPoints = 100;
+    public Text endScoreText;
+    public Text totalScoreScore;
+    public Text endRoomsText;
+    public Text totalRoomScore;
+    public Text totalScoreText;
+    public Text totalScoreNumber;
 
     [HideInInspector] public int playerScorePoints = 0;
     [HideInInspector] public bool playersTurn = true;
     [HideInInspector] public GameObject MainMenuLossButton;
-    
+
     private Text levelText;
     private GameObject levelImage;
     private List<Enemy> enemies;
     private bool enemiesMoving;
     private bool doingSetup;
     private bool firstRoom = true;
-    
+
     public int level = 1;
-    
-	void Awake () {
+
+    void Awake() {
         if (instance == null)
             instance = this;
         else if (instance != this)
-            Destroy (gameObject);
+            Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
 
         enemies = new List<Enemy>();
 
         boardScript = GetComponent<BoardManager>();
+
         //InitGame();
-	}
+    }
     void OnEnable()
     {
-            //Tell our ‘OnLevelFinishedLoading’ function to start listening for a scene change event as soon as this script is enabled.
-            SceneManager.sceneLoaded += OnLevelFinishedLoading;
+        //Tell our ‘OnLevelFinishedLoading’ function to start listening for a scene change event as soon as this script is enabled.
+        SceneManager.sceneLoaded += OnLevelFinishedLoading;
     }
     void OnDisable()
     {
@@ -64,13 +71,24 @@ public class GameManager : MonoBehaviour {
         //Call InitGame to initialize our level.
         InitGame();
     }
-   
 
-void InitGame () {
-        Debug.Log("Foo");
+
+    void InitGame() {
         doingSetup = true;
         MainMenuLossButton = GameObject.Find("MainMenuLossButton");
         MainMenuLossButton.SetActive(false);
+        endScoreText = GameObject.Find("endScoreText").GetComponent<Text>();
+        endScoreText.text = "";
+        totalScoreScore = GameObject.Find("totalScoreScore").GetComponent<Text>();
+        totalScoreScore.text = "";
+        endRoomsText = GameObject.Find("endRoomsText").GetComponent<Text>();
+        endRoomsText.text = "";
+        totalRoomScore = GameObject.Find("totalRoomScore").GetComponent<Text>();
+        totalRoomScore.text = "";
+        totalScoreText = GameObject.Find("totalScoreText").GetComponent<Text>();
+        totalScoreText.text = "";
+        totalScoreNumber = GameObject.Find("totalScoreNumber").GetComponent<Text>();
+        totalScoreNumber.text = "";
         levelImage = GameObject.Find("levelImage");
         levelText = GameObject.Find("levelText").GetComponent<Text>();
         levelText.text = ("Room " + level);

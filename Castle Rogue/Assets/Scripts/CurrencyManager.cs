@@ -27,7 +27,7 @@ public class CurrencyManager : MonoBehaviour {
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
-        money = 500000;
+        money = 0;
         if (File.Exists(Application.persistentDataPath + "/Money.dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();

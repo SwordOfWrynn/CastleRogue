@@ -172,6 +172,12 @@ MonoBehaviour:
   turnDelay: 0.1
   boardScript: {fileID: 0}
   playerStaminaPoints: 100
+  endScoreText: {fileID: 0}
+  totalScoreScore: {fileID: 0}
+  endRoomsText: {fileID: 0}
+  totalRoomScore: {fileID: 0}
+  totalScoreText: {fileID: 0}
+  totalScoreNumber: {fileID: 0}
   playerScorePoints: 0
   playersTurn: 1
   MainMenuLossButton: {fileID: 0}
