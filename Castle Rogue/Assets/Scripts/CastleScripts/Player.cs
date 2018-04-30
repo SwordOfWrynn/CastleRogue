@@ -181,10 +181,11 @@ public class Player : MovingObject {
     private void CheckIfGameOver()
     {
         if (stamina <= 0)
-            if (!hasWatchedAd)
+            if (hasWatchedAd == false)
             {
                 adCanvas.SetActive(true);
                 Time.timeScale = 0;
+                hasWatchedAd = true;
             }
             else
                 GameManager.instance.GameOver();

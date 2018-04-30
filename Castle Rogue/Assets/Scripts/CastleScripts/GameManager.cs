@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
+    public int finalRoomsMultiplier = 10;
+    public int finalScoreMultiplier = 10;
+
     public float levelStartDelay = 2f;
     public float turnDelay = .2f;
     public static GameManager instance = null;
@@ -106,6 +109,16 @@ public class GameManager : MonoBehaviour {
 
     public void GameOver()
     {
+        endScoreText.text = "Score " + playerScorePoints + " * " + finalScoreMultiplier + " =";
+        int score = playerScorePoints * finalScoreMultiplier;
+        totalScoreScore.text = score.ToString();
+        endRoomsText.text = "Rooms " + level + " * " + finalRoomsMultiplier + " =";
+        int roomScore = level * finalRoomsMultiplier;
+        totalRoomScore.text = roomScore.ToString();
+        totalScoreText.text = "Total Score =";
+        int totalScore = score + roomScore;
+        totalScoreNumber.text = totalScore.ToString();
+
         levelText.text = ("You robbed " + level + " rooms before \n you had to make your escape");
         levelImage.SetActive(true);
         MainMenuLossButton.SetActive(true);
