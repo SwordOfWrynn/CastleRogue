@@ -37,14 +37,19 @@ public class Player : MovingObject {
     private int stamina;
     private int score;
 
-	// Use this for initialization
-	protected override void Start () {
+    // Use this for initialization
+    protected override void Start()
+    {
         staminaText = GameObject.Find("staminaText").GetComponent<Text>();
         scoreText = GameObject.Find("scoreText").GetComponent<Text>();
         adCanvas = GameObject.Find("adCanvas");
         menuButton = GameObject.Find("MenuButton");
         yesAd = GameObject.Find("YesAd").GetComponent<Button>();
+
+#if UNITY_ANDROID
         yesAd.onClick.AddListener(ShowRewardedAd);
+#endif
+
         rightArrow = GameObject.Find("RightArrow").GetComponent<Button>();
         rightArrow.onClick.AddListener(RightButton);
         upArrow = GameObject.Find("UpArrow").GetComponent<Button>();
@@ -54,7 +59,11 @@ public class Player : MovingObject {
         downArrow = GameObject.Find("DownArrow").GetComponent<Button>();
         downArrow.onClick.AddListener(DownButton);
         noAd = GameObject.Find("NoAd").GetComponent<Button>();
+
+        #if UNITY_ANDROID
         noAd.onClick.AddListener(NoToAds);
+#endif
+
         adCanvas.SetActive(false);
         animator = GetComponent<Animator>();
         stamina = GameManager.instance.playerStaminaPoints;
@@ -62,7 +71,14 @@ public class Player : MovingObject {
         score = GameManager.instance.playerScorePoints;
         scoreText.text = ("Score: " + score);
         base.Start();
-	}
+
+#if UNITY_STANDALONE || UNITY_WEBPLAYER || UNITY_EDITOR
+        rightArrow.gameObject.SetActive(false);
+        upArrow.gameObject.SetActive(false);
+        leftArrow.gameObject.SetActive(false);
+        downArrow.gameObject.SetActive(false);
+#endif
+    }
 
     private void OnDisable()
     {
@@ -180,6 +196,7 @@ public class Player : MovingObject {
 
     private void CheckIfGameOver()
     {
+#if UNITY_ANDROID
         if (stamina <= 0)
             if (hasWatchedAd == false)
             {
@@ -189,10 +206,16 @@ public class Player : MovingObject {
             }
             else
                 GameManager.instance.GameOver();
+#else
+        if(stamina <= 0)
+            GameManager.instance.GameOver();
+#endif
     }
 
     //Ad Code
-    #region Advertisments
+#region Advertisments
+
+#if UNITY_ANDROID
     public void NoToAds()
     {
         Time.timeScale = 1;
@@ -254,5 +277,7 @@ public class Player : MovingObject {
                 break;
         }
     }
-    #endregion
+#endif
+
+#endregion
 }

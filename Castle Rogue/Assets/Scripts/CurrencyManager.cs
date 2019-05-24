@@ -39,6 +39,8 @@ public class CurrencyManager : MonoBehaviour {
             MoneyInfo myLoadedInfo = (MoneyInfo)bf.Deserialize(file);
             
             money = myLoadedInfo.money;
+
+            file.Close();
         }
         //else
             //money = 0;

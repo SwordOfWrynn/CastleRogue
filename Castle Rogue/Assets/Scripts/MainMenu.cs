@@ -31,8 +31,7 @@ public class MainMenu : MonoBehaviour {
     }
     public void Castle()
     {
-        //load 2nd scene in the build settings; I think it's an array
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Castle");
     }
 
     public void CharacterSelection()
